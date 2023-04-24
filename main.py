@@ -1,4 +1,17 @@
-word = "kiszony"
+'''
+Rozszerzenia
+1. Sprawdzanie czy podany znak to litera
+2. Sprawdzanie czy podana litera została już użyta
+3. Wywolanie losowego slowa z listy slow
+4. Zapętlenie gry
+
+'''
+
+import random
+
+words = ["rozwielitka", "tamtamy", "moskitiera", "parownica", "szarada", "mrozoodporny", "kaszalot", "kalesony",
+         "kuropatwa", "zawierucha"]
+word = random.choice(words)
 
 user_word = []
 
@@ -60,7 +73,10 @@ while True:
         no_of_tries -= 1
 
         if no_of_tries == 0:
+            print()
             print("G.A.M.E.  O.V.E.R.")
+            print(f"The word you were looking for was: {word}")
+            print()
             exit()
 
     else:
@@ -69,6 +85,5 @@ while True:
             if ''.join(user_word) == word:
                 print("Y.O.U.  W.I.N.")
                 exit()
-    #    already_exist(user_letter, used_letters)
-    state_of_game()
 
+    state_of_game()
